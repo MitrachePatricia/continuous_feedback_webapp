@@ -70,7 +70,7 @@ function Register() {
       event.preventDefault(); // Prevent default form submission behavior
 
       if (!validateInput()) {
-        return; // Prevent further action if inputs are invalid
+        return;
       }
 
       console.log(userRole);
@@ -91,7 +91,7 @@ function Register() {
 
   const handleSelect = (role) => {
       setUserRole(role);
-      setErrorMessage('');  // Clear any previous error message
+      setErrorMessage('');
   };
 
   useEffect(() => {
@@ -114,7 +114,7 @@ function Register() {
               <MDBDropdownToggle>Role</MDBDropdownToggle>
               <MDBDropdownMenu>
                   <MDBDropdownItem link onClick={() => handleSelect("Student")}>Student</MDBDropdownItem>
-                  <MDBDropdownItem link onClick={() => handleSelect("Teacher")}>Teacher</MDBDropdownItem>
+                  <MDBDropdownItem link onClick={() => handleSelect("Professor")}>Professor</MDBDropdownItem>
               </MDBDropdownMenu>
           </MDBDropdown>
           
