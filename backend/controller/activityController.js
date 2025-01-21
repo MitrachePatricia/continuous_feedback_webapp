@@ -63,14 +63,15 @@ const endActivity = async(req,res)=>{
 const accessActivity=async(req, res)=>{
     try{
         const {activityCode:activityCode,userId : userId} = req.params;
-       
+
         const activity=await Activity.findOne({where: {activityCode:activityCode}});
+        console.log("activity")
         if(activity){
-           
+
             if(!activity.endTime){
                 
                 const user = await User.findByPk(userId)
-                console.log(user.activitiesIds.indexOf(activity._id.toString()))
+
                 if(user && user.activitiesIds.indexOf(activity._id.toString()) == -1){
 
                     if(user.activitiesIds == undefined){
@@ -170,6 +171,7 @@ const addFeedback = async (req,res) =>{
         
     }
 }
+
 
 
 module.exports={createActivity, accessActivity, endActivity,getAllactivitiesForSpecificUser,getAllactivitiesForSpecificStudent,addFeedback}
