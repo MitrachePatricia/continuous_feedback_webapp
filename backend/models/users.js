@@ -17,6 +17,9 @@ const userschema=new mongoose.Schema({
         type:String, 
         trim: true
     },
+    activities :{
+        type:Array
+    }
     
 
 })
